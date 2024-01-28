@@ -17,7 +17,7 @@ To recreate this app on your local machine-
 ```bash
 OPENAI_API_KEY="<your_api_key>"
 ```
-3. create a python virtual environment by executing the following commands - 
+3. create a python virtual environment by executing the following commands, install the required libraries. Voila you are ready to run the app. You need to execute the following commands one after another- 
 ```bash
 python -m venv .
 pip install -r requirements.txt 
