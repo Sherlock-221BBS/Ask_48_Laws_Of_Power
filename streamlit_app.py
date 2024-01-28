@@ -13,6 +13,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.vectorstores import DocArrayInMemorySearch
 from langchain_community.chat_models import ChatOpenAI
 from langchain.text_splitter import RecursiveCharacterTextSplitter 
+from langchain.chains import ConversationalRetrievalChain
 
 
 
