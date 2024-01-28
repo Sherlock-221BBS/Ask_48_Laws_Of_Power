@@ -1,17 +1,17 @@
-import streamlit as st 
+import streamlit as st
 import openai 
-
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain_community.document_loaders import PyPDFLoader 
 from langchain.text_splitter import RecursiveCharacterTextSplitter 
 from langchain.chains import ConversationalRetrievalChain 
 from langchain.vectorstores import DocArrayInMemorySearch
-from langchain.llms.openai import OpenAIChat
+from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 
-openai.api_key = st.secrets["OPENAI_API_KEY"]
 
 
+
+openai.api_key = st.secrets['OPENAI_API_KEY']
 st.set_page_config(page_title = "RAG System")
 st.title("Ask 48 Laws of Power")
 
@@ -23,7 +23,7 @@ def load_db(file, chain_type, k):
 
   embedding = OpenAIEmbeddings()
   vectordb = DocArrayInMemorySearch.from_documents(docs, embedding)
-  llm = OpenAIChat()
+  llm = ChatOpenAI(model_name = 'gpt-3.5-turbo', temperature = 0)
   qa = ConversationalRetrievalChain.from_llm(
       llm, 
       vectordb.as_retriever(search_type = 'similarity',  
@@ -43,27 +43,26 @@ def query_llm(qa, query):
   st.session_state.messages.extend([(query, result)])
   return result
 
+  
 def initialize():
+  file_path = "./48lawsofpower.pdf"
+  qa = load_db(file_path, 'stuff', k = 5)
+  
   if "messages" not in st.session_state:
     st.session_state.messages = []
 
-  file_path = "./48lawsofpower.pdf"
-  qa = load_db(file_path, "stuff", k = 5)
-  return qa 
+  return qa
 
 def conv_chain():
   qa = initialize()
-
   for message in st.session_state.messages:
     st.chat_message("human").write(message[0])
     st.chat_message("ai").write(message[1])
 
-  if query:= st.chat_input():
+  if query:= st.chat_input:
     st.chat_message("human").write(query)
     response = query_llm(qa, query)
     st.chat_message("ai").write(response)
 
-if __name__ == '__main__':
+if __name__== '__main__':
   conv_chain()
-
-  

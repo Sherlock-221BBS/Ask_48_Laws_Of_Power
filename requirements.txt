@@ -1,6 +1,6 @@
 streamlit 
 docarray 
-
+pydantic=1.10.14
 langchain-community
 langchain
 cohere 
