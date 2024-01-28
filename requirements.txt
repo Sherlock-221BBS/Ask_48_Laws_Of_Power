@@ -1,8 +1,6 @@
 streamlit 
+docarray 
 langchain
-kaleido 
-python-multipart
-chromadb
 cohere 
 tiktoken
 openai 
