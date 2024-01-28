@@ -1,7 +1,8 @@
 streamlit 
 docarray 
-langchain
+
 langchain-community
+langchain
 cohere 
 tiktoken
 openai 
