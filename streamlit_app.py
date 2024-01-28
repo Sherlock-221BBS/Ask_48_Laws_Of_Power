@@ -6,7 +6,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter 
 from langchain.chains import ConversationalRetrievalChain 
 from langchain.vectorstores import DocArrayInMemorySearch
-from langchain.chat_models import ChatOpenAI
+from langchain.llms.openai import OpenAIChat
 from langchain.memory import ConversationBufferMemory
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
@@ -23,7 +23,7 @@ def load_db(file, chain_type, k):
 
   embedding = OpenAIEmbeddings()
   vectordb = DocArrayInMemorySearch.from_documents(docs, embedding)
-  llm = ChatOpenAI(model_name = 'gpt-3.5-turbo', temperature = 0)
+  llm = OpenAIChat()
   qa = ConversationalRetrievalChain.from_llm(
       llm, 
       vectordb.as_retriever(search_type = 'similarity',  
