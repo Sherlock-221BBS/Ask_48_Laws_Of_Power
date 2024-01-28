@@ -11,7 +11,7 @@ Go check out by yourself - [Link](https://ask48lawsofpower-hovzy6rtiugewdn9a2kbh
 ## Recreation of the app
 To recreate this app on your local machine-
 1. clone this repository in the suitable location you prefer 
-2. You need to create _.streamlit_ folder and in that folder there should be _config.toml_ file. _.config.toml_ file should contain the openai api key of yours as below - 
+2. You need to create _.streamlit_ folder and in that folder there should be _config.toml_ file. _config.toml_ file should contain the openai api key of yours as below - 
 
 
 ```bash
