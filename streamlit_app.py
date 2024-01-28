@@ -46,7 +46,7 @@ def initialize():
   if "messages" not in st.session_state:
     st.session_state.messages = []
 
-  file_path = "./48_laws_of_power.pdf"
+  file_path = "./48lawsofpower.pdf"
   qa = load_db(file_path, "stuff", k = 5)
   return qa 
 
