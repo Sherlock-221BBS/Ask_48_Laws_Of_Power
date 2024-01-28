@@ -58,7 +58,7 @@ def conv_chain():
     st.chat_message("human").write(message[0])
     st.chat_message("ai").write(message[1])
 
-  if query:= st.chat_input:
+  if query:= st.chat_input():
     st.chat_message("human").write(query)
     response = query_llm(qa, query)
     st.chat_message("ai").write(response)
