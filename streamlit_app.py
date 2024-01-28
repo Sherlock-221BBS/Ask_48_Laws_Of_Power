@@ -28,7 +28,7 @@ def load_db(file, chain_type, k):
       llm, 
       vectordb.as_retriever(search_type = 'similarity',  
                             search_kwargs = {"k": k}), 
-      chain_type = chain_type
+      chain_type = chain_type,
       return_source_documents = True, 
       return_generated_question= True
   )
