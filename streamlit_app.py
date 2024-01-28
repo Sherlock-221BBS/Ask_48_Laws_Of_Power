@@ -1,11 +1,6 @@
 import streamlit as st
 import openai 
-# from langchain.embeddings.openai import OpenAIEmbeddings
-# from langchain_community.document_loaders import PyPDFLoader 
-# from langchain.text_splitter import RecursiveCharacterTextSplitter 
-# from langchain.chains import ConversationalRetrievalChain 
-# from langchain.vectorstores import DocArrayInMemorySearch
-# from langchain.chat_models import ChatOpenAI
+
 
 
 from langchain_community.embeddings.openai import OpenAIEmbeddings
