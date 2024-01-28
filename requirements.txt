@@ -1,6 +1,7 @@
 streamlit 
 langchain
-sqlite>=3.35
+kaleido 
+python-multipart
 chromadb
 cohere 
 tiktoken
