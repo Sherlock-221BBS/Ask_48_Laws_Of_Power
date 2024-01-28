@@ -1,0 +1,7 @@
+streamlit 
+langchain
+langchain[docarray]
+cohere 
+tiktoken
+openai 
+pypdf 
