@@ -1,5 +1,6 @@
 streamlit 
 langchain
+sqlite>=3.35
 chromadb
 cohere 
 tiktoken
