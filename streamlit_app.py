@@ -5,7 +5,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.document_loaders import PyPDFLoader 
 from langchain.text_splitter import RecursiveCharacterTextSplitter 
 from langchain.chains import ConversationalRetrievalChain 
-from langchain.vectorstores import DocArrayInMemorySearch
+from langchain.vectorstores import Chroma
 from langchain.chat_models import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 
@@ -22,7 +22,7 @@ def load_db(file, chain_type, k):
   docs = text_splitter.split_documents(pages)
 
   embedding = OpenAIEmbeddings()
-  vectordb = DocArrayInMemorySearch.from_documents(docs, embedding)
+  vectordb = Chroma.from_documents(docs, embedding)
   llm = ChatOpenAI(model_name = 'gpt-3.5-turbo', temperature = 0)
   qa = ConversationalRetrievalChain.from_llm(
       llm, 

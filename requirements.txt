@@ -1,5 +1,6 @@
 streamlit 
-"langchain[docarray]"
+langchain
+chromadb
 cohere 
 tiktoken
 openai 
