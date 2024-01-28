@@ -39,7 +39,7 @@ def query_llm(qa, query):
   
   result = qa({"question": query, "chat_history" : st.session_state.messages})
   result = result["answer"]
-  st.session_state.extend([(query, result)])
+  st.session_state.messages.extend([(query, result)])
   return result
 
 def initialize():
